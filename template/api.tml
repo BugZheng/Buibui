@@ -1,0 +1,28 @@
+package main
+
+import (
+	"ProjectName/asset"
+	"ProjectName/cmd"
+	"fmt"
+	"github.com/urfave/cli/v2"
+	"os"
+)
+
+func main() {
+	app := cli.NewApp()
+	app.Name = "E-tools"
+	app.Usage = "一切为了简化开发(偷懒,摸鱼)！ 建设性懒惰是程序员的基本美德之一"
+	app.Commands = cmd.Commands
+	app.Action = func(c *cli.Context) error {
+
+		indexHtml, _ := asset.Asset("config/template.yaml")
+		fmt.Println(string(indexHtml))
+
+		fmt.Println("Etool工具项目已经启动V1.0")
+		return nil
+	}
+	if err := app.Run(os.Args); err != nil {
+		fmt.Println("app running error", err)
+	}
+
+}

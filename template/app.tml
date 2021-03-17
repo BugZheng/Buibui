@@ -1,0 +1,14 @@
+LogsPath:
+  logs/
+
+DataBaseConfig:
+  DB_HOST:
+    10.23.1.2
+  DB_PORT:
+    3306
+  DB_USERNAME:
+    root
+  DB_PASSWORD:
+    123456
+  DB_NAME:
+    projectName_db
